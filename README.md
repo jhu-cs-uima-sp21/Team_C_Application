@@ -4,10 +4,10 @@ We will record our meeting minutes here:
 
 Date: 3/28/2021
 Attendees: Will, Danny, Daniel
-Duration: 1 hour
-Discussion Points: Setting up login activity and Firebase user fields
+Duration: 1.5 hours
+Discussion Points: Setting up login activity and Firebase user fields. Confirmed how we want to implement login. Started firebase, and made progress on login activity class. Will Try to meet with Eugene later to get caught up (timezone issues).
 
-Date:
-Attendees:
-Duration:
-Discussion Points:
+Date: 3/24/2021
+Attendees: Will, Daniel
+Duration: 1 hour
+Discussion Points: Basic git set up (issue with defaulting to master instead of main)
