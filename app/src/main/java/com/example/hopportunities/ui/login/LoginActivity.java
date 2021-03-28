@@ -93,7 +93,7 @@ public class LoginActivity extends AppCompatActivity {
         loginButton = findViewById(R.id.login);
         final ProgressBar loadingProgressBar = findViewById(R.id.loading);
 
-        mdbase = FirebaseDatabase.getInstance();
+        mdbase = FirebaseDatabase.getInstance("https://hopportunities-bb518-default-rtdb.firebaseio.com");
         dbref = mdbase.getReference();
         mItems = new ArrayList<>();
         Context context = getApplicationContext();
