@@ -111,7 +111,7 @@ public class LoginActivity extends AppCompatActivity {
 
         mdbase = FirebaseDatabase.getInstance("https://hopportunities-bb518-default-rtdb.firebaseio.com/");
         dbref = mdbase.getReference("Users");
-        dbref.setValue("HEllo World");
+        //dbref.setValue("HEllo World");
         mItems = new ArrayList<>();
         Context context = getApplicationContext();
         myPrefs =
