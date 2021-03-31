@@ -14,4 +14,7 @@
     <string name="login_failed">"Login failed"</string>
     <string name="sign_in">Sign In</string>
     <string name="create_account">Create Account</string>
+    <string name="tell_us_about_yourself">Tell us about yourself</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
 </resources>
