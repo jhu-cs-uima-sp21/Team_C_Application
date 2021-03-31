@@ -62,6 +62,7 @@ public class LoginActivity extends AppCompatActivity {
         }
         return ret;
     }
+
     private View.OnClickListener logInListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -142,6 +143,7 @@ public class LoginActivity extends AppCompatActivity {
                 //Log.w(TAG, "Failed to read value.", error.toException());
             }
         });
+
         createAccountButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -149,8 +151,10 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
         loginButton.setOnClickListener(logInListener);
     }
+
     public void onLogIn(View view) {
 
     }
