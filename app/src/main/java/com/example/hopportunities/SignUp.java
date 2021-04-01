@@ -18,6 +18,8 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUp extends AppCompatActivity {
 
@@ -26,6 +28,8 @@ public class SignUp extends AppCompatActivity {
     private TextView backToLogin;
 
     FirebaseAuth fAuth;
+    private FirebaseDatabase mdbase;
+    private DatabaseReference dbref;
 
     private Fragment signUp1;
 
@@ -41,6 +45,8 @@ public class SignUp extends AppCompatActivity {
         backToLogin = findViewById(R.id.backToLogin);
 
         fAuth = FirebaseAuth.getInstance();
+        mdbase = FirebaseDatabase.getInstance("https://hopportunities-bb518-default-rtdb.firebaseio.com/");
+        dbref = mdbase.getReference();
 
         register.setOnClickListener(registerListener);
 
@@ -98,6 +104,13 @@ public class SignUp extends AppCompatActivity {
 
                     Snackbar.make(v, "User added to the database.", Snackbar.LENGTH_SHORT).show();
 
+
+                    // Linking Firebase Auth to Realtime Database
+                    String id = fAuth.getCurrentUser().getUid();
+                    User newUser = new User(id, email);
+                    // then add to database, remember it's a map data structure
+                    dbref.child("users").child(newUser.getId()).setValue(newUser);
+
                     //         Re-add fragment container later
                     //        signUp1 = new SignUpFrag1();
                     //        getSupportFragmentManager().beginTransaction()
@@ -121,4 +134,29 @@ public class SignUp extends AppCompatActivity {
             return android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
         }
     }
+
+
+    // TODO: Temporary class for testing, DELETE later
+    public class User {
+        public String id;
+        public String email;
+
+        public User() {
+            // for calls to DataSnapshot.getValue(Client.class)
+        }
+
+        public User(String id, String email) {
+            this.id = id;
+            this.email = email;
+        }
+
+        public String toString() {
+            return this.id + ": " + this.email;
+        }
+
+        public String getId() {
+            return this.id;
+        }
+    }
+
 }
