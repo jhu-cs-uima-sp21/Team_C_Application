@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpFrag2Tutor">
+
+    <ToggleButton
+        android:id="@+id/tbtn_socsci"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="28dp"
+        android:text="Social Science"
+        android:textOff="Social Science"
+        android:textOn="Social Science"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbtn_science" />
+
+    <ToggleButton
+        android:id="@+id/tbtn_lang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="36dp"
+        android:text="Foreign Language"
+        android:textOff="Foreign Language"
+        android:textOn="Foreign Language"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/tbtn_socsci"
+        app:layout_constraintTop_toBottomOf="@+id/tbtn_science" />
+
+    <ToggleButton
+        android:id="@+id/tbtn_cs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="28dp"
+        android:text="Computer Science"
+        android:textOff="Computer Science"
+        android:textOn="Computer Science"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbtn_socsci" />
+
+    <TextView
+        android:id="@+id/tell_us_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/tell_us_about_yourself"
+        android:textColor="#3F51B5"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/edu_level_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Education Level"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.108"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tell_us_textview" />
+
+    <TextView
+        android:id="@+id/edu_level2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="Subjects You Want to Tutor"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.158"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edu_level_spinner" />
+
+    <Spinner
+        android:id="@+id/edu_level_spinner"
+        android:layout_width="271dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edu_level_textview" />
+
+    <ToggleButton
+        android:id="@+id/tbtn_math"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="28dp"
+        android:shadowColor="#009C27B0"
+        android:text="Math"
+        android:textAllCaps="false"
+        android:textColorHighlight="@color/teal_700"
+        android:textColorLink="#4CAF50"
+        android:textOff="Math"
+        android:textOn="Math"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edu_level2" />
+
+    <ToggleButton
+        android:id="@+id/tbtn_science"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:shadowColor="#FFFFFF"
+        android:text="Science"
+        android:textColorHighlight="@color/teal_700"
+        android:textColorLink="#4CAF50"
+        android:textOff="Science"
+        android:textOn="Science"
+        app:layout_constraintEnd_toStartOf="@+id/tbtn_english"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toEndOf="@+id/tbtn_math"
+        app:layout_constraintTop_toBottomOf="@+id/edu_level2" />
+
+    <ToggleButton
+        android:id="@+id/tbtn_english"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="36dp"
+        android:checked="false"
+        android:text="English"
+        android:textColorLink="#4CAF50"
+        android:textOff="English"
+        android:textOn="English"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edu_level2" />
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="42dp"
+        android:layout_marginEnd="36dp"
+        android:background="#4CAF50"
+        android:text="Next"
+        android:textColor="@color/white"
+        app:backgroundTint="#4CAF50"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbtn_cs"
+        app:rippleColor="#4CAF50" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

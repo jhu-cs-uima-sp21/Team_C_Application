@@ -115,11 +115,11 @@ public class SignUp extends AppCompatActivity {
                     //        signUp1 = new SignUpFrag1();
                     //        getSupportFragmentManager().beginTransaction()
                     //                .add(R.id.fragment_container, signUp1).commit();
+
                     Intent intent = new Intent(getBaseContext(), CreateAccount.class);
                     intent.putExtra("id", id);
                     intent.putExtra("email", email);
                     startActivity(intent);
-
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
