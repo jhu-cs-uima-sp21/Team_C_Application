@@ -2,6 +2,11 @@
 
 We will record our meeting minutes here:
 
+Date: 4/2/2021
+Attendees: Will, Daniel, Danny
+Duration: 1 hour
+Discussion Points: Went over the implementation of the sign up process for students and tutors and who should work on what part.
+
 Date: 3/28/2021
 Attendees: Will, Danny, Daniel
 Duration: 1.5 hours

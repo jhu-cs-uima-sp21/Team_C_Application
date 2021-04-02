@@ -21,18 +21,17 @@ import java.util.List;
 
 public class SignUpFrag2Student extends Fragment implements
         AdapterView.OnItemSelectedListener {
+
     private CreateAccount createAccount;
     private Boolean spinnerSelect = false;
     private Spinner spinner;
     View view;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_sign_up_2_student, container, false);
-
         return  view;
     }
 
@@ -90,6 +89,9 @@ public class SignUpFrag2Student extends Fragment implements
                 createAccount.gradeEdu = spinner.getSelectedItem().toString();
                 createAccount.subs = subs;
                 FragmentTransaction ft = createAccount.fm.beginTransaction();
+                ConfirmFragment conf = new ConfirmFragment();
+                ft.replace(R.id.fragment_container, conf).addToBackStack(null).commit();
+                return;
 
 
             }

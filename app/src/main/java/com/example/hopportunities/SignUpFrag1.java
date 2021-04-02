@@ -19,6 +19,7 @@ import com.google.android.material.snackbar.Snackbar;
 public class SignUpFrag1 extends Fragment {
 
     CreateAccount createAccount;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -27,6 +28,7 @@ public class SignUpFrag1 extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_sign_up_1, container, false);
     }
+
     // Called at the start of the visible lifetime.
     @Override
     public void onStart(){
@@ -57,7 +59,6 @@ public class SignUpFrag1 extends Fragment {
                 }
 
                 if (student.isChecked()) {
-
                     createAccount.student = true;
                     createAccount.firstName = firstname;
                     createAccount.lastName = lastname;
@@ -70,10 +71,10 @@ public class SignUpFrag1 extends Fragment {
                     createAccount.firstName = firstname;
                     createAccount.lastName = lastname;
                     // launch tutor fragment 2
+                    SignUpFrag2Tutor signup_tutor = new SignUpFrag2Tutor();
+                    FragmentTransaction ftr = createAccount.fm.beginTransaction();
+                    ftr.replace(R.id.fragment_container, signup_tutor).addToBackStack(null).commit();
                 }
-
-
-
                 //createAccount.ft.replace(R.id.fragment_container, signUp2).addToBackStack(null).commit();
             }
         });

@@ -9,12 +9,13 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import android.util.Log;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class CreateAccount  extends FragmentActivity {
     private Fragment signUp1;
-    private String userId;
-    private String userEmail;
+    public String userId;
+    public String userEmail;
     private String userPassword;
     public String firstName;
     public String lastName;
@@ -22,7 +23,7 @@ public class CreateAccount  extends FragmentActivity {
     public Boolean student; //true = student false = tutor
     public FragmentManager fm;
     public String gradeEdu;
-    public List<String> subs;
+    public ArrayList<String> subs;
 
 
     @Override

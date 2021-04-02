@@ -109,17 +109,17 @@ public class SignUp extends AppCompatActivity {
                     String id = fAuth.getCurrentUser().getUid();
                     User newUser = new User(id, email);
                     // then add to database, remember it's a map data structure
-                    dbref.child("users").child(newUser.getId()).setValue(newUser);
+                    //dbref.child("users").child(newUser.getId()).setValue(newUser);
 
                     //         Re-add fragment container later
                     //        signUp1 = new SignUpFrag1();
                     //        getSupportFragmentManager().beginTransaction()
                     //                .add(R.id.fragment_container, signUp1).commit();
+
                     Intent intent = new Intent(getBaseContext(), CreateAccount.class);
                     intent.putExtra("id", id);
                     intent.putExtra("email", email);
                     startActivity(intent);
-
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
