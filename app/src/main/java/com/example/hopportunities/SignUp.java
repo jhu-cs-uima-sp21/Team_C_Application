@@ -109,7 +109,7 @@ public class SignUp extends AppCompatActivity {
                     String id = fAuth.getCurrentUser().getUid();
                     User newUser = new User(id, email);
                     // then add to database, remember it's a map data structure
-                    dbref.child("users").child(newUser.getId()).setValue(newUser);
+                    //dbref.child("users").child(newUser.getId()).setValue(newUser);
 
                     //         Re-add fragment container later
                     //        signUp1 = new SignUpFrag1();
