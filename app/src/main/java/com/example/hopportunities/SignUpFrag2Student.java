@@ -90,6 +90,9 @@ public class SignUpFrag2Student extends Fragment implements
                 createAccount.gradeEdu = spinner.getSelectedItem().toString();
                 createAccount.subs = subs;
                 FragmentTransaction ft = createAccount.fm.beginTransaction();
+                ConfirmFragment conf = new ConfirmFragment();
+                ft.replace(R.id.fragment_container, conf).addToBackStack(null).commit();
+                return;
 
 
             }
