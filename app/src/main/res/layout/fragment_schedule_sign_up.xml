@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ToggleButton
+        android:id="@+id/suMorn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="420dp"
+        android:text="ToggleButton"
+        android:textOff="Morning"
+        android:textOn="Morning"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/whenare" />
+
+    <ToggleButton
+        android:id="@+id/suEvening"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="420dp"
+        android:text="ToggleButton"
+        android:textOff="Evening"
+        app:layout_constraintStart_toEndOf="@+id/mAfternoon"
+        app:layout_constraintTop_toBottomOf="@+id/whenare" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="428dp"
+        android:text="Sunday"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/whenare" />
+
+    <ToggleButton
+        android:id="@+id/suAfternoon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="420dp"
+        android:text="ToggleButton"
+        android:textOff="Afternoon"
+        android:textOn="Afternoon"
+        app:layout_constraintStart_toEndOf="@+id/mMorn"
+        app:layout_constraintTop_toBottomOf="@+id/whenare" />
+
+    <ToggleButton
+        android:id="@+id/satMorn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="352dp"
+        android:text="ToggleButton"
+        android:textOff="Morning"
+        android:textOn="Morning"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/whenare" />
+
+    <ToggleButton
+        android:id="@+id/satEvening"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="352dp"
+        android:text="ToggleButton"
+        android:textOff="Evening"
+        app:layout_constraintStart_toEndOf="@+id/mAfternoon"
+        app:layout_constraintTop_toBottomOf="@+id/whenare" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="360dp"
+        android:text="Saturday"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/whenare" />
+
+    <ToggleButton
+        android:id="@+id/satAfternoon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="352dp"
+        android:text="ToggleButton"
+        android:textOff="Afternoon"
+        android:textOn="Afternoon"
+        app:layout_constraintStart_toEndOf="@+id/mMorn"
+        app:layout_constraintTop_toBottomOf="@+id/whenare" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="292dp"
+        android:text="Friday"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/whenare" />
+
+    <ToggleButton
+        android:id="@+id/fEvening"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="284dp"
+        android:text="ToggleButton"
+        android:textOff="Evening"
+        app:layout_constraintStart_toEndOf="@+id/mAfternoon"
+        app:layout_constraintTop_toBottomOf="@+id/whenare" />
+
+    <ToggleButton
+        android:id="@+id/fMorn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="284dp"
+        android:text="ToggleButton"
+        android:textOff="Morning"
+        android:textOn="Morning"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/whenare" />
+
+    <ToggleButton
+        android:id="@+id/fAfternoon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="284dp"
+        android:text="ToggleButton"
+        android:textOff="Afternoon"
+        android:textOn="Afternoon"
+        app:layout_constraintStart_toEndOf="@+id/mMorn"
+        app:layout_constraintTop_toBottomOf="@+id/whenare" />
+
+    <ToggleButton
+        android:id="@+id/thMorn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="220dp"
+        android:text="ToggleButton"
+        android:textOff="Morning"
+        android:textOn="Morning"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/whenare" />
+
+    <ToggleButton
+        android:id="@+id/thEvening"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="220dp"
+        android:text="ToggleButton"
+        android:textOff="Evening"
+        app:layout_constraintStart_toEndOf="@+id/mAfternoon"
+        app:layout_constraintTop_toBottomOf="@+id/whenare" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="228dp"
+        android:text="Thursday"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/whenare" />
+
+    <ToggleButton
+        android:id="@+id/thAfternoon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="220dp"
+        android:text="ToggleButton"
+        android:textOff="Afternoon"
+        android:textOn="Afternoon"
+        app:layout_constraintStart_toEndOf="@+id/mMorn"
+        app:layout_constraintTop_toBottomOf="@+id/whenare" />
+
+    <ToggleButton
+        android:id="@+id/wMorn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="144dp"
+        android:text="ToggleButton"
+        android:textOff="Morning"
+        android:textOn="Morning"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/whenare" />
+
+    <ToggleButton
+        android:id="@+id/wEvening"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="144dp"
+        android:text="ToggleButton"
+        android:textOff="Evening"
+        app:layout_constraintStart_toEndOf="@+id/mAfternoon"
+        app:layout_constraintTop_toBottomOf="@+id/whenare" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="156dp"
+        android:text="Wednesday"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/whenare" />
+
+    <ToggleButton
+        android:id="@+id/wAfternoon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="144dp"
+        android:text="ToggleButton"
+        android:textOff="Afternoon"
+        android:textOn="Afternoon"
+        app:layout_constraintStart_toEndOf="@+id/mMorn"
+        app:layout_constraintTop_toBottomOf="@+id/whenare" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="88dp"
+        android:text="Tuesday"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/whenare" />
+
+    <ToggleButton
+        android:id="@+id/tuEvening"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="80dp"
+        android:text="ToggleButton"
+        android:textOff="Evening"
+        app:layout_constraintStart_toEndOf="@+id/mAfternoon"
+        app:layout_constraintTop_toBottomOf="@+id/whenare" />
+
+    <ToggleButton
+        android:id="@+id/tuMorn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="80dp"
+        android:text="ToggleButton"
+        android:textOff="Morning"
+        android:textOn="Morning"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/whenare" />
+
+    <ToggleButton
+        android:id="@+id/tuAfternoon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="80dp"
+        android:text="ToggleButton"
+        android:textOff="Afternoon"
+        android:textOn="Afternoon"
+        app:layout_constraintStart_toEndOf="@+id/mMorn"
+        app:layout_constraintTop_toBottomOf="@+id/whenare" />
+
+    <ToggleButton
+        android:id="@+id/mEvening"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="ToggleButton"
+        android:textOff="Evening"
+        app:layout_constraintStart_toEndOf="@+id/mAfternoon"
+        app:layout_constraintTop_toBottomOf="@+id/whenare" />
+
+    <ToggleButton
+        android:id="@+id/mAfternoon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="ToggleButton"
+        android:textOff="Afternoon"
+        android:textOn="Afternoon"
+        app:layout_constraintStart_toEndOf="@+id/mMorn"
+        app:layout_constraintTop_toBottomOf="@+id/whenare" />
+
+    <TextView
+        android:id="@+id/tell_us_textview2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/tell_us_about_yourself"
+        android:textColor="#3F51B5"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/whenare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="When are you available?"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tell_us_textview2" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="Monday"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/whenare" />
+
+    <ToggleButton
+        android:id="@+id/mMorn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="ToggleButton"
+        android:textOff="Morning"
+        android:textOn="Morning"
+        app:layout_constraintStart_toEndOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/whenare" />
+
+    <Button
+        android:id="@+id/schedNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/suAfternoon" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
