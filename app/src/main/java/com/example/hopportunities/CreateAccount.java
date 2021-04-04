@@ -24,6 +24,8 @@ public class CreateAccount  extends FragmentActivity {
     public FragmentManager fm;
     public String gradeEdu;
     public ArrayList<String> subs;
+    public String bio;
+    public ArrayList<ArrayList<Boolean>> avail;
 
 
     @Override

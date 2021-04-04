@@ -1,5 +1,6 @@
 package com.example.hopportunities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -58,12 +59,15 @@ public class ConfirmFragment extends Fragment {
                 if(createAccount.student) {
                     //create and add student
                     Student newStudent = new Student(createAccount.firstName,createAccount.lastName,createAccount.userEmail, createAccount.gradeEdu, createAccount.subs,createAccount.userId);
-                    dbref.child("users").child(newStudent.getId()).setValue(newStudent);
+                    dbref.child("students").child(newStudent.getId()).setValue(newStudent);
                 } else {
-                    //create and add tutor
+                    Tutor newTutor = new Tutor(createAccount.firstName,createAccount.lastName,createAccount.userEmail,createAccount.subs,createAccount.avail,createAccount.bio,createAccount.userId);
+                    dbref.child("tutors").child(newTutor.getId()).setValue(newTutor);
                 }
 
+                Intent intent = new Intent(createAccount.getBaseContext(), MainActivity.class);
 
+                startActivity(intent);
             }
         });
     }
