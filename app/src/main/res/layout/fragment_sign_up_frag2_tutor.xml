@@ -7,14 +7,14 @@
     tools:context=".SignUpFrag2Tutor">
 
     <ToggleButton
-        android:id="@+id/tbtn_socsci"
+        android:id="@+id/tbtn_history"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:text="Social Science"
-        android:textOff="Social Science"
-        android:textOn="Social Science"
+        android:textOff="History"
+        android:textOn="History"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbtn_science" />
 
@@ -23,13 +23,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="36dp"
+        android:layout_marginEnd="24dp"
         android:text="Foreign Language"
         android:textOff="Foreign Language"
         android:textOn="Foreign Language"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/tbtn_socsci"
+        app:layout_constraintStart_toEndOf="@+id/tbtn_history"
         app:layout_constraintTop_toBottomOf="@+id/tbtn_science" />
 
     <ToggleButton
@@ -38,11 +38,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="Computer Science"
-        android:textOff="Computer Science"
-        android:textOn="Computer Science"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tbtn_socsci" />
+        android:textOff="Comp sci"
+        android:textOn="Comp sci"
+        app:layout_constraintEnd_toStartOf="@+id/tbtn_lang"
+        app:layout_constraintStart_toEndOf="@+id/tbtn_history"
+        app:layout_constraintTop_toBottomOf="@+id/tbtn_science" />
 
     <TextView
         android:id="@+id/tell_us_textview"
@@ -96,7 +96,7 @@
         android:id="@+id/tbtn_math"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:shadowColor="#009C27B0"
         android:text="Math"
@@ -129,7 +129,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="36dp"
+        android:layout_marginEnd="24dp"
         android:checked="false"
         android:text="English"
         android:textColorLink="#4CAF50"
