@@ -61,7 +61,7 @@ public class ConfirmFragment extends Fragment {
                     Student newStudent = new Student(createAccount.firstName,createAccount.lastName,createAccount.userEmail, createAccount.gradeEdu, createAccount.subs,createAccount.userId);
                     dbref.child("students").child(newStudent.getId()).setValue(newStudent);
                 } else {
-                    Tutor newTutor = new Tutor(createAccount.firstName,createAccount.lastName,createAccount.userEmail,createAccount.subs,createAccount.avail,createAccount.bio,createAccount.userId);
+                    Tutor newTutor = new Tutor(createAccount.firstName,createAccount.lastName,createAccount.userEmail,createAccount.subs,createAccount.avail,createAccount.bio,createAccount.userId, createAccount.gradeEdu);
                     dbref.child("tutors").child(newTutor.getId()).setValue(newTutor);
                 }
 

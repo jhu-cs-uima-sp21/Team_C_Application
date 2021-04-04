@@ -71,6 +71,7 @@ public class SignUpFrag2Student extends Fragment implements
                 ToggleButton english = createAccount.findViewById(R.id.toggleButtonEnglish);
                 ToggleButton lang = createAccount.findViewById(R.id.toggleButtonLanguage);
                 ToggleButton comp = createAccount.findViewById(R.id.toggleButtonCompsci);
+                ToggleButton history = createAccount.findViewById(R.id.toggleButtonHistory);
                 if (math.isChecked()) {
                     subs.add("math");
                 }
@@ -85,6 +86,9 @@ public class SignUpFrag2Student extends Fragment implements
                 }
                 if (comp.isChecked()) {
                     subs.add("comp");
+                }
+                if (history.isChecked()) {
+                    subs.add("history");
                 }
                 createAccount.gradeEdu = spinner.getSelectedItem().toString();
                 createAccount.subs = subs;

@@ -12,10 +12,10 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/navigation_dashboard"
-        android:name="com.example.hopportunities.ui.dashboard.DashboardFragment"
-        android:label="@string/title_dashboard"
-        tools:layout="@layout/fragment_dashboard" />
+        android:id="@+id/navigation_find_tutors"
+        android:name="com.example.hopportunities.FindTutorsFrag"
+        android:label="Find tutors"
+        tools:layout="@layout/fragment_find_tutors" />
 
     <fragment
         android:id="@+id/navigation_notifications"

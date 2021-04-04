@@ -21,8 +21,8 @@ public class Tutor extends User {
 
     Tutor() {} //needed for db
 
-    public Tutor(String firstName, String lastName, String email, ArrayList<String> subjects, ArrayList<ArrayList<Boolean>> avail, String bio,  String id) {
-        super(firstName, lastName, email, subjects, id);
+    public Tutor(String firstName, String lastName, String email, ArrayList<String> subjects, ArrayList<ArrayList<Boolean>> avail, String bio,  String id, String grade) {
+        super(firstName, lastName, email, subjects, id, grade);
         this.avail = avail;
         this.bio = bio;
         //this.qualifications = qualifications;
