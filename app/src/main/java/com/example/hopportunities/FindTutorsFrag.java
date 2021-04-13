@@ -65,7 +65,7 @@ public class FindTutorsFrag extends Fragment {
                 if (history.isChecked()) {
                     subs.add("history");
                 }
-                Intent intent = new Intent(mainActivity.getBaseContext(), FindTutorsActivity.class);
+                Intent intent = new Intent(mainActivity.getBaseContext(), Find_Schedule.class);
 
 
                 intent.putExtra("subs", subs);
