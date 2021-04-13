@@ -14,6 +14,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class FindTutorsActivity extends AppCompatActivity {
@@ -24,8 +25,25 @@ public class FindTutorsActivity extends AppCompatActivity {
     private static final String TAG = "dbref: ";
     protected TutorAdapter aa;
     ArrayList<String> subs;
+    ArrayList<ArrayList<Boolean>> avail;
+    ArrayList<Boolean> tempAvail;
 
-    public void filter(Tutor t, List<Tutor> tList){
+    //if any overlap in scheds, return true
+    public Boolean filter_avail(Tutor t, List<Tutor> tList){
+
+        ArrayList<ArrayList<Boolean>> tAvail = t.getAvail();
+        for (int i = 0; i < 7; i++) {
+            for(int j = 0; j < 3; j++) {
+                if (avail.get(i).get(j) == tAvail.get(i).get(j) && avail.get(i).get(j) == true) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+
+    public Boolean filter_sub(Tutor t, List<Tutor> tList){
         Boolean fits = true;
         for(String s : subs) {
             if (!t.getSubjects().contains(s)) {
@@ -33,11 +51,34 @@ public class FindTutorsActivity extends AppCompatActivity {
 
             }
         }
-        if (fits) {
-            tList.add(t);
-        }
+        return fits;
+        //if (fits) {
+        //    tList.add(t);
+        //}
 
     }
+
+
+    //I had to flatten the nested arraylist to pass in bundle, this "unflattens" it
+    //actually nevermind, will probably get rid of this
+    /*
+    private ArrayList<ArrayList<Boolean>> toCorrectAvailFormat(boolean[] bWrong) {
+        ArrayList<ArrayList<Boolean>> correctAvail = new ArrayList<>();
+        correctAvail.add(new ArrayList<>()); //one list for each day, each has one bool for morning, evening, night
+        correctAvail.add(new ArrayList<>());
+        correctAvail.add(new ArrayList<>());
+        correctAvail.add(new ArrayList<>());
+        correctAvail.add(new ArrayList<>());
+        correctAvail.add(new ArrayList<>());
+        correctAvail.add(new ArrayList<>());
+        int i = 0;
+        for (Boolean b: bWrong) {
+            correctAvail.get(i / 3).add(b);
+        }
+        return correctAvail;
+    }
+
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +92,8 @@ public class FindTutorsActivity extends AppCompatActivity {
         ListView lv = findViewById(R.id.find_tutors_list);
         lv.setAdapter(aa);
         subs = getIntent().getStringArrayListExtra("subs");
-
+        //avail = toCorrectAvailFormat( getIntent().getBooleanArrayExtra("avail"));
+        avail = (ArrayList<ArrayList<Boolean>>) getIntent().getSerializableExtra("avail");
         dbref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
@@ -69,7 +111,9 @@ public class FindTutorsActivity extends AppCompatActivity {
                 for (DataSnapshot pair : clients) {
                     Tutor t = pair.getValue(Tutor.class);
 
-                    filter(t,tutors);
+                    if (filter_sub(t,tutors) && filter_avail(t,tutors)) {
+                        tutors.add(t);
+                    }
                 }
                 aa.notifyDataSetChanged();
             }
