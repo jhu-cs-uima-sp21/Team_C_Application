@@ -22,14 +22,16 @@ public class NotificationsFragment extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         notificationsViewModel =
                 new ViewModelProvider(this).get(NotificationsViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_notifications, container, false);
-        final TextView textView = root.findViewById(R.id.text_notifications);
-        notificationsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
-        return root;
+        View root = inflater.inflate(R.layout.fragment_tutor_home, container, false);
+        TextView hello_name_real = root.findViewById(R.id.hello_name);
+        String Dan = "Dan";
+        hello_name_real.setText("Hello, " + Dan);
+       // notificationsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+         //   @Override
+         //   public void onChanged(@Nullable String s) {
+          //      textView.setText(s);
+          //  }
+       // });
+       return root;
     }
 }
