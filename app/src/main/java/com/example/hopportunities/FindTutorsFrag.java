@@ -14,12 +14,14 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
 public class FindTutorsFrag extends Fragment {
-    private MainActivity mainActivity;
 
+    private MainActivity mainActivity;
     View view;
 
     @Override

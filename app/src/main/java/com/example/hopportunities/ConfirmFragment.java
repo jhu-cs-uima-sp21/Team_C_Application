@@ -147,11 +147,6 @@ public class ConfirmFragment extends Fragment {
         }
 
         formattedSchedule = userAvail.toString();
-
-        Log.d("check", "START");
-        Log.d("schedule", formattedSchedule);
-        Log.d("check", "END");
-
         return formattedSchedule;
     }
 }
