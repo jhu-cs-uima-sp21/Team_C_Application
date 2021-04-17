@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,9 +7,11 @@
 
     <EditText
         android:id="@+id/lastName"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
         android:layout_marginTop="48dp"
+        android:layout_marginEnd="36dp"
         android:ems="10"
         android:hint="@string/last_name"
         android:inputType="textPersonName"
@@ -26,15 +27,18 @@
         android:layout_marginTop="48dp"
         android:text="@string/tell_us_about_yourself"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        android:textColor="#3F51B5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/firstName"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
         android:layout_marginTop="48dp"
+        android:layout_marginEnd="36dp"
         android:ems="10"
         android:hint="@string/first_name"
         android:inputType="textPersonName"
@@ -42,21 +46,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tellUs" />
 
-    <Button
-        android:id="@+id/tellUsNext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="128dp"
-        android:text="Next"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lastName" />
-
     <RadioGroup
-        android:layout_width="349dp"
-        android:layout_height="95dp"
-        android:layout_marginTop="24dp"
+        android:id="@+id/radioGroup"
+        android:layout_width="320dp"
+        android:layout_height="97dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="36dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,15 +60,27 @@
 
         <RadioButton
             android:id="@+id/radio_student"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Student" />
+            android:text="Student"
+            android:textSize="18sp" />
 
         <RadioButton
             android:id="@+id/radio_tutor"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/tutor" />
+            android:text="@string/tutor"
+            android:textSize="18sp" />
     </RadioGroup>
+
+    <Button
+        android:id="@+id/tellUsNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

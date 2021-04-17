@@ -16,7 +16,6 @@ public class CreateAccount  extends FragmentActivity {
     private Fragment signUp1;
     public String userId;
     public String userEmail;
-    private String userPassword;
     public String firstName;
     public String lastName;
     private FragmentTransaction ft;

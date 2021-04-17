@@ -138,33 +138,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edu_level2" />
 
-    <Button
-        android:id="@+id/btn_next"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="136dp"
-        android:layout_marginEnd="36dp"
-        android:background="#4CAF50"
-        android:text="Next"
-        android:textColor="@color/white"
-        app:backgroundTint="#4CAF50"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tbtn_cs"
-        app:rippleColor="#4CAF50" />
-
     <EditText
         android:id="@+id/bio"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="32dp"
         android:ems="10"
         android:hint="Add a quick bio"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/btn_next"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbtn_cs" />
+
+    <Button
+        android:id="@+id/btn_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bio" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

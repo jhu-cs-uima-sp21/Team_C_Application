@@ -107,7 +107,8 @@ public class SignUp extends AppCompatActivity {
 
                     // Linking Firebase Auth to Realtime Database
                     String id = fAuth.getCurrentUser().getUid();
-                    User newUser = new User(id, email);
+
+                    //User newUser = new User(id, email);
                     // then add to database, remember it's a map data structure
                     //dbref.child("users").child(newUser.getId()).setValue(newUser);
 
@@ -138,29 +139,4 @@ public class SignUp extends AppCompatActivity {
             return android.util.Patterns.EMAIL_ADDRESS.matcher(target).matches();
         }
     }
-
-
-    // TODO: Temporary class for testing, DELETE later
-    public class User {
-        public String id;
-        public String email;
-
-        public User() {
-            // for calls to DataSnapshot.getValue(Client.class)
-        }
-
-        public User(String id, String email) {
-            this.id = id;
-            this.email = email;
-        }
-
-        public String toString() {
-            return this.id + ": " + this.email;
-        }
-
-        public String getId() {
-            return this.id;
-        }
-    }
-
 }
