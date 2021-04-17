@@ -28,5 +28,4 @@ public class Tutor extends User {
         //this.qualifications = qualifications;
 
     }
-
 }
