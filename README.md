@@ -24,6 +24,11 @@ User Type: Tutor
 
 We will record our meeting minutes here:
 
+Date: 4/11/2021
+Attendees: Will, Daniel, Danny
+Duration: 30 minutes
+Discussion Points: Went over Sprint 2 and how to implement the rest of the features needed for the app. Divided up the work for Sprint 2 amongst members.
+
 Date: 4/4/2021
 Attendees: Will, Daniel, Danny, Eugene
 Duration: 30 minutes
