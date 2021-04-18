@@ -45,14 +45,14 @@ public class MainActivity extends AppCompatActivity {
 
         System.out.println("onCreate");
 //        for (int i = 0; i < fAuth.getCurrentUser().)
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-                finish();
-            }
-        });
+//        logout.setOnClickListener(new View.OnClickListener() {
+  //          @Override
+    //        public void onClick(View v) {
+      //          FirebaseAuth.getInstance().signOut();
+        //        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+        //        finish();
+         //   }
+      //  });
     }
 
 }
