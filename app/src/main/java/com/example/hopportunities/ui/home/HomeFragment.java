@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -68,6 +69,13 @@ public class HomeFragment extends Fragment {
                 subjectsLayout.addView(subjTextView);
             }
         }
+        Button viewMore = root.findViewById(R.id.button_view_more);
+        viewMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
+            }
+        });
         // notificationsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
         //   @Override
         //   public void onChanged(@Nullable String s) {
