@@ -24,6 +24,11 @@ User Type: Tutor
 
 We will record our meeting minutes here:
 
+Date: 4/18/2021
+Attendees: Will, Daniel, Danny
+Duration: 40 minutes
+Discussion Points: Talked about how to resolve git merge issues. Went over the progress we've made on Sprint 2 with team members and what to do next.
+
 Date: 4/11/2021
 Attendees: Will, Daniel, Danny
 Duration: 30 minutes

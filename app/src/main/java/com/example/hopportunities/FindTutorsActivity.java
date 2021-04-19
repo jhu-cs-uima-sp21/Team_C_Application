@@ -179,8 +179,11 @@ public class FindTutorsActivity extends AppCompatActivity {
 
                         dbref.child("contacts").child(stuId + "-" + t.getId()).setValue(stuId + "-" + t.getId());
 
-
+                        try {
                         startActivity(i);
+                        } catch (android.content.ActivityNotFoundException ex) {
+                            Toast.makeText(thisAct, "There are no email clients installed.",Toast.LENGTH_SHORT).show();
+                        }
                         //Toast.makeText(thisAct, "Email sent!",Toast.LENGTH_SHORT).show();
 
                     }
