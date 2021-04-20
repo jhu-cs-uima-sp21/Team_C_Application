@@ -6,17 +6,27 @@ public class User {
     private String firstName;
     private String lastName;
     private String email;
-    private String password;
+    private String id;
+    private String grade;
     private ArrayList<String> subjects;
 
     public User() {} //needed for db?
 
-    public User(String firstName, String lastName, String email, String password, ArrayList<String> subjects) {
+    public User(String firstName, String lastName, String email, ArrayList<String> subjects,String id, String grade) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
-        this.password = password;
+        this.id = id;
         this.subjects = subjects;
+        this.grade = grade;
+    }
+
+    public String getGrade() {
+        return grade;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public String getFirstName() {
@@ -31,9 +41,7 @@ public class User {
         return email;
     }
 
-    public String getPassword() {
-        return password;
-    }
+
 
     public ArrayList<String> getSubjects() {
         return subjects;
