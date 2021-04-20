@@ -2,6 +2,7 @@ package com.example.hopportunities.ui.login;
 
 import android.app.Activity;
 
+import androidx.annotation.NonNull;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -32,6 +33,8 @@ import com.example.hopportunities.R;
 import com.example.hopportunities.SignUp;
 import com.example.hopportunities.Student;
 import com.example.hopportunities.User;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -54,6 +57,8 @@ public class LoginActivity extends AppCompatActivity {
 
     private List<User> containsAcc(String user, String pass) {
         List<User> ret = new ArrayList<User>();
+        Log.i("Item", "Size : " + ret.size());
+
 
         for (User profile: mItems) {
             if (profile.getEmail().equals(user) && profile.getPassword().equals(pass)) {
@@ -109,29 +114,34 @@ public class LoginActivity extends AppCompatActivity {
         createAccountButton= findViewById(R.id.createAccount);
         final ProgressBar loadingProgressBar = findViewById(R.id.loading);
 
-        mdbase = FirebaseDatabase.getInstance("https://hopportunities-bb518-default-rtdb.firebaseio.com/");
-        dbref = mdbase.getReference("Users");
+        mdbase = FirebaseDatabase.getInstance("https://hopportunities-bb518-default-rtdb.firebaseio.com");
+        dbref = mdbase.getReference("users");
         //dbref.setValue("HEllo World");
         mItems = new ArrayList<>();
         Context context = getApplicationContext();
         myPrefs =
                 PreferenceManager.getDefaultSharedPreferences(context);
+
         dbref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
                 long count = snapshot.getChildrenCount();
-                //Log.d(TAG, "Children count: " + count);
-                //Log.d(TAG, "Client count: " + snapshot.child("clients").getChildrenCount());
+
+                Log.d("DB", "Exists : " + snapshot.exists());
+                Log.d("DB", "Children count: " + count);
+                Log.d("DB", "Client count: " + snapshot.child("users").getChildrenCount());
 
                 // need to recreate the mItems list somehow
                 // another way is to use a FirebaseRecyclerView - see Sample Database code
 
                 mItems.clear();
-                Iterable<DataSnapshot> users = snapshot.child("Users").getChildren();
+                Iterable<DataSnapshot> users = snapshot.getChildren();
                 for (DataSnapshot pair : users) {
-                    mItems.add(pair.getValue(User.class));
+                    User user = pair.getValue(User.class);
+                    Log.i("User", user.toString());
+                    mItems.add(user);
                 }
                 //mAdapt.notifyDataSetChanged();
             }
@@ -139,7 +149,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onCancelled(DatabaseError error) {
                 // Failed to read value
-                //Log.w(TAG, "Failed to read value.", error.toException());
+                Log.w("DB", "Failed to read value.", error.toException());
             }
         });
         createAccountButton.setOnClickListener(new View.OnClickListener() {
