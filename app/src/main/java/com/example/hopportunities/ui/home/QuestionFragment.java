@@ -21,6 +21,7 @@ import com.example.hopportunities.MainActivity;
 import com.example.hopportunities.R;
 import com.example.hopportunities.data.model.Question;
 import com.example.hopportunities.ui.adapter.QuestionRecyclerAdapter;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.UUID;
@@ -30,6 +31,7 @@ public class QuestionFragment extends Fragment {
     private HomeViewModel homeViewModel;
     private MainActivity mainActivity;
     private CreateAccount createAccount;
+    private FloatingActionButton newQuestion;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         mainActivity = (MainActivity) getActivity();
@@ -38,6 +40,13 @@ public class QuestionFragment extends Fragment {
         String firstName = homeViewModel.firstName;
 
         View root = inflater.inflate(R.layout.fragment_student_question, container, false);
+        newQuestion = root.findViewById(R.id.new_question_button);
+        newQuestion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "Question?", Toast.LENGTH_SHORT).show();
+            }
+        });
         ArrayList<Question> list = new ArrayList<>();
         for(int i = 0;i<100;i++){
             list.add(new Question(UUID.randomUUID().toString(), UUID.randomUUID().toString(), "asdf", "asdfasdf", "asdfasdf", "asdf"));
