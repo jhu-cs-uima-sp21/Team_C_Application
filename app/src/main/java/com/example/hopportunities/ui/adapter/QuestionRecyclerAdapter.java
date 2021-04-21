@@ -50,7 +50,9 @@ public class QuestionRecyclerAdapter extends RecyclerView.Adapter<ArticleViewHol
     public void onBindViewHolder(@NonNull ArticleViewHolder holder, int position) {
         Question item = list.get(position);
         holder.setQuestionText(item.getQuestion());
-        holder.setStatusText(item.getStatus());
+        holder.setStatusText(item.getResponse().isEmpty() ?
+                        context.getString(R.string.no_responses) :
+                        context.getString(R.string.view_responses));
         holder.setTitleText(item.getTitle());
         holder.getMainView().setOnClickListener(new View.OnClickListener() {
             @Override

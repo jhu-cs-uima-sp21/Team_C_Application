@@ -25,6 +25,9 @@ public class HomeViewModel extends ViewModel {
     public boolean isStudent = false;
     public String firstName;
     public List<String> subjects;
+    public String getID(){
+        return fAuth.getCurrentUser().getUid();
+    }
     public HomeViewModel() {
         System.out.println("view model");
         fAuth = FirebaseAuth.getInstance();

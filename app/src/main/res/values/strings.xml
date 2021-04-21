@@ -17,7 +17,13 @@
     <string name="tell_us_about_yourself">Tell us about yourself</string>
     <string name="first_name">First name</string>
     <string name="last_name">Last name</string>
+    <string name="question">Question</string>
+    <string name="ask_your_question">Ask Your Question</string>
+    <string name="title">Title</string>
+    <string name="no_responses">No Responses</string>
+    <string name="view_responses">View Responses</string>
     <string name="tutor">Tutor</string>
+    <string name="empty">Empty?</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

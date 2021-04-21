@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Hopportunities">
         <activity android:name=".Find_Schedule"></activity>
+        <activity android:name=".ui.question.NewQuestionActivity"/>
         <activity android:name=".FindTutorsActivity" />
         <activity android:name=".CreateAccount" />
         <activity

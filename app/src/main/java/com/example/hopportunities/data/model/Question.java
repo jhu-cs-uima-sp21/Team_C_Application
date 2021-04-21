@@ -1,38 +1,34 @@
 package com.example.hopportunities.data.model;
 
+import java.util.ArrayList;
+
 public class Question {
-    private String uuid;
     private String title;
-    private String author;
-    private String responseUuid;
     private String question;
-    private String status;
+    private ArrayList<QuestionResponse> responses;
 
+    public Question(){
+        this("", "", new ArrayList<QuestionResponse>());
+    }
     public Question(
-    String uuid,
     String title,
-    String author,
-    String responseUuid,
     String question,
-    String status){
-        this.uuid = uuid;
+    ArrayList<QuestionResponse> responses){
         this.title = title;
-        this.author = author;
-        this.responseUuid = responseUuid;
         this.question = question;
-        this.status = status;
+        this.responses = responses;
     }
 
-    public String getStatus() {
-        return status;
+    public void setResponse(ArrayList<QuestionResponse> response) {
+        this.responses = response;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void addResponse(QuestionResponse response){
+        this.responses.add(response);
     }
 
-    public String getAuthor() {
-        return author;
+    public ArrayList<QuestionResponse> getResponse() {
+        return responses;
     }
 
     public String getQuestion() {
@@ -43,32 +39,12 @@ public class Question {
         return title;
     }
 
-    public String getResponseUuid() {
-        return responseUuid;
-    }
-
-    public String getUuid() {
-        return uuid;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
     public void setQuestion(String question) {
         this.question = question;
     }
 
-    public void setResponseUuid(String responseUuid) {
-        this.responseUuid = responseUuid;
-    }
-
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
     }
 
 }

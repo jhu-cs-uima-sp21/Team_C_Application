@@ -1,54 +1,50 @@
 package com.example.hopportunities.data.model;
 
+import java.time.LocalDateTime;
+import java.util.Calendar;
+import java.util.Date;
+
 public class QuestionResponse {
-    private String uuid;
-    private String title;
-    private String author;
-    private String responseUuid;
+    private String firstName;
+    private String lastName;
     private String response;
+    private Date timestamp;
 
-public QuestionResponse(String uuid,
-String title,
-        String author,
-        String responseUuid,
-        String response){
-    this.uuid = uuid;
-    this.title = title;
-    this.author = author;
-    this.responseUuid = responseUuid;
-    this.response = response;
-}
-
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
+    public QuestionResponse(){
+        this("", "", "");
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public QuestionResponse(String firstName,
+                            String lastName,
+                            String response){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.response = response;
+        this.timestamp = Calendar.getInstance().getTime();
     }
 
-    public void setResponseUuid(String responseUuid) {
-        this.responseUuid = responseUuid;
+    public Date getTimestamp() {
+        return timestamp;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setTimestamp(Date timestamp) {
+        this.timestamp = timestamp;
     }
 
-    public String getUuid() {
-        return uuid;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public String getResponseUuid() {
-        return responseUuid;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getTitle() {
-        return title;
+    public String getLastName() {
+        return lastName;
     }
 
-    public String getAuthor() {
-        return author;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getResponse() {

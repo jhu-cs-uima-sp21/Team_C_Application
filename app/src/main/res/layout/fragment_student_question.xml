@@ -6,14 +6,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ScrollView
+    <TextView
+        android:id="@+id/title"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/question_list"/>
-    </ScrollView>
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Ask and Answer Questions"
+        android:textColor="#3F51B5"
+        android:textSize="24sp"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/sub"
+        android:layout_below="@id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="Feel free to chime in if you know the answer"
+        android:textColor="#9FA5C0"
+        android:textSize="16sp"
+        android:gravity="center" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/question_list"
+        android:layout_below="@id/sub"
+        android:layout_marginTop="12dp"
+        />
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/new_question_button"
         android:layout_width="wrap_content"
