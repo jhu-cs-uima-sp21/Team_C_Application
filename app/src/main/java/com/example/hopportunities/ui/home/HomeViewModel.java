@@ -35,11 +35,11 @@ public class HomeViewModel extends ViewModel {
         fAuth = FirebaseAuth.getInstance();
         String id = fAuth.getCurrentUser().getUid();
         Log.i("ViewModel", id);
-        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("students");
+        DatabaseReference ref = FirebaseDatabase.getInstance("https://hopportunities-bb518-default-rtdb.firebaseio.com/").getReference().child("students");
         ref.addValueEventListener(new MyValueEventListener(id, true, this));
 
         if (!isStudent) {
-            ref = FirebaseDatabase.getInstance().getReference().child("tutors");
+            ref = FirebaseDatabase.getInstance("https://hopportunities-bb518-default-rtdb.firebaseio.com/").getReference().child("tutors");
             ref.addValueEventListener(new MyValueEventListener(id, false, this));
         }
 

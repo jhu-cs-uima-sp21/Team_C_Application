@@ -43,8 +43,8 @@ public class AnswerActivity extends AppCompatActivity implements ValueEventListe
         String id = getIntent().getStringExtra("id");
         uid = getIntent().getStringExtra("uid");
         Log.i("ViewModel", uid);
-        FirebaseDatabase.getInstance().getReference().child("students").addValueEventListener(this);
-        FirebaseDatabase.getInstance().getReference().child("tutors").addValueEventListener(this);
+        FirebaseDatabase.getInstance("https://hopportunities-bb518-default-rtdb.firebaseio.com/").getReference().child("students").addValueEventListener(this);
+        FirebaseDatabase.getInstance("https://hopportunities-bb518-default-rtdb.firebaseio.com/").getReference().child("tutors").addValueEventListener(this);
         DatabaseReference refer = FirebaseDatabase.getInstance("https://hopportunities-bb518-default-rtdb.firebaseio.com/")
                 .getReference().child("question").child(id).child("responses");
         Button answer = findViewById(R.id.answer_submit);
