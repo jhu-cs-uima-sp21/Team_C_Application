@@ -1,5 +1,6 @@
 package com.example.hopportunities.ui.home;
 
+import android.util.Log;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -24,6 +25,7 @@ public class HomeViewModel extends ViewModel {
     private FirebaseAuth fAuth;
     public boolean isStudent = false;
     public String firstName;
+    public String lastName;
     public List<String> subjects;
     public String getID(){
         return fAuth.getCurrentUser().getUid();
@@ -32,7 +34,7 @@ public class HomeViewModel extends ViewModel {
         System.out.println("view model");
         fAuth = FirebaseAuth.getInstance();
         String id = fAuth.getCurrentUser().getUid();
-
+        Log.i("ViewModel", id);
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("students");
         ref.addValueEventListener(new MyValueEventListener(id, true, this));
 
@@ -68,6 +70,7 @@ public class HomeViewModel extends ViewModel {
                 if (datas.getKey().equals(id)) {
                     viewModel.isStudent = isStudent;
                     viewModel.firstName = datas.child("firstName").getValue().toString();
+                    viewModel.lastName = datas.child("lastName").getValue().toString();
                     viewModel.subjects = (List<String>) datas.child("subjects").getValue();
                     break;
                 }

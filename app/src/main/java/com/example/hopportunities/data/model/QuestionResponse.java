@@ -8,7 +8,6 @@ public class QuestionResponse {
     private String firstName;
     private String lastName;
     private String response;
-    private Date timestamp;
 
     public QuestionResponse(){
         this("", "", "");
@@ -20,15 +19,6 @@ public class QuestionResponse {
         this.firstName = firstName;
         this.lastName = lastName;
         this.response = response;
-        this.timestamp = Calendar.getInstance().getTime();
-    }
-
-    public Date getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(Date timestamp) {
-        this.timestamp = timestamp;
     }
 
     public String getFirstName() {

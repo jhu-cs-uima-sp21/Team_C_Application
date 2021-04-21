@@ -13,25 +13,45 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hopportunities.R;
 import com.example.hopportunities.data.model.Question;
+import com.example.hopportunities.data.model.QuestionResponse;
+import com.example.hopportunities.ui.question.AnswerActivity;
 import com.example.hopportunities.ui.question.ResponseActivity;
 
 import java.util.ArrayList;
 
-public class QuestionRecyclerAdapter extends RecyclerView.Adapter<QuestionViewHolder> {
-    private ArrayList<Pair<String, Question>> list;
+public class QuestionResponseRecyclerAdapter extends RecyclerView.Adapter<QuestionViewHolder> {
+    private ArrayList<QuestionResponse> list;
     private Context context;
-    public QuestionRecyclerAdapter(Context context){
+    private String id;
+    private String uid;
+    private String title;
+    private String question;
+    public QuestionResponseRecyclerAdapter(Context context){
         this.context = context;
         list = new ArrayList<>();
     }
 
+    public void setUid(String uid){
+        this.uid = uid;
+    }
+    public void setTitle(String title){
+        this.title = title;
+    }
+    public void setQuestion(String question){
+        this.question = question;
+    }
 
-    public QuestionRecyclerAdapter(Context context, ArrayList<Pair<String, Question>> list){
+    public void setId(String id){
+        this.id = id;
+    }
+
+
+    public QuestionResponseRecyclerAdapter(Context context, ArrayList<QuestionResponse> list){
         this.context = context;
         this.list = list;
     }
 
-    public void setItem(ArrayList<Pair<String, Question>> list){
+    public void setItem(ArrayList<QuestionResponse> list){
         this.list = list;
         this.notifyDataSetChanged();
     }
@@ -49,23 +69,10 @@ public class QuestionRecyclerAdapter extends RecyclerView.Adapter<QuestionViewHo
 
     @Override
     public void onBindViewHolder(@NonNull QuestionViewHolder holder, int position) {
-        Pair<String, Question> pair = list.get(position);
-        Question item = pair.second;
-        holder.setQuestionText(item.getQuestion());
-        holder.setStatusText(item.getHasResponse() ?
-                        context.getString(R.string.view_responses) :
-                        context.getString(R.string.no_responses));
-        holder.setTitleText(item.getTitle());
-        holder.getMainView().setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, ResponseActivity.class);
-                intent.putExtra("id", pair.first);
-                intent.putExtra("title", pair.second.getTitle());
-                intent.putExtra("question", pair.second.getQuestion());
-                context.startActivity(intent);
-            }
-        });
+        QuestionResponse item = list.get(position);
+        holder.setQuestionText(item.getResponse());
+
+        holder.setTitleText(item.getFirstName() + " " + item.getLastName());
     }
 
     @Override

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.renderscript.Sampler;
 import android.util.Log;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,10 +59,9 @@ public class QuestionFragment extends Fragment {
             }
         });
 
-        String uid = FirebaseAuth.getInstance().getUid();
         DatabaseReference refer = FirebaseDatabase.getInstance("https://hopportunities-bb518-default-rtdb.firebaseio.com/")
-                .getReference().child("question").child(uid);
-        ArrayList<Question> list = new ArrayList<>();
+                .getReference().child("question");
+        ArrayList<Pair<String, Question>> list = new ArrayList<>();
         RecyclerView recyclerView=root.findViewById(R.id.question_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
@@ -72,8 +72,9 @@ public class QuestionFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 list.clear();
                 for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
-                    Question university = postSnapshot.getValue(Question.class);
-                    list.add(university);
+                    Question qes = postSnapshot.getValue(Question.class);
+                    qes.setHasResponse(postSnapshot.child("responses").getChildrenCount() != 0);
+                    list.add(new Pair<String, Question>(postSnapshot.getKey(), qes));
                 }
                 adapter.setItem(list);
             }

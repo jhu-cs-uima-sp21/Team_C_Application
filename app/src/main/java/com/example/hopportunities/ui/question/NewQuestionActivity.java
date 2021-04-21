@@ -46,15 +46,13 @@ public class NewQuestionActivity extends AppCompatActivity {
                 Question q = new Question(
                         title.getText().toString(),
                         question.getText().toString(),
-                        new ArrayList<>());
+                        false);
                 if(q.getTitle().isEmpty() || q.getQuestion().isEmpty()){
                     Toast.makeText(getApplicationContext(), R.string.empty, Toast.LENGTH_SHORT).show();
                 }else{
-                    String uid = FirebaseAuth.getInstance().getUid();
                     DatabaseReference refer =  FirebaseDatabase.getInstance("https://hopportunities-bb518-default-rtdb.firebaseio.com/")
                             .getReference().child("question");
-                    DatabaseReference userData = refer.child(uid);
-                    DatabaseReference newPos = userData.push();
+                    DatabaseReference newPos = refer.push();
                     newPos.setValue(q);
                     finish();
                 }

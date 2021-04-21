@@ -5,30 +5,25 @@ import java.util.ArrayList;
 public class Question {
     private String title;
     private String question;
-    private ArrayList<QuestionResponse> responses;
-
+    private boolean hasResponse;
     public Question(){
-        this("", "", new ArrayList<QuestionResponse>());
+        this("", "", false);
     }
     public Question(
     String title,
     String question,
-    ArrayList<QuestionResponse> responses){
+    boolean hasResponse){
         this.title = title;
         this.question = question;
-        this.responses = responses;
+        this.hasResponse = hasResponse;
     }
 
-    public void setResponse(ArrayList<QuestionResponse> response) {
-        this.responses = response;
+    public boolean getHasResponse() {
+        return hasResponse;
     }
 
-    public void addResponse(QuestionResponse response){
-        this.responses.add(response);
-    }
-
-    public ArrayList<QuestionResponse> getResponse() {
-        return responses;
+    public void setHasResponse(boolean hasResponse) {
+        this.hasResponse = hasResponse;
     }
 
     public String getQuestion() {

@@ -8,13 +8,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hopportunities.R;
 
-public class ArticleViewHolder extends RecyclerView.ViewHolder {
+public class QuestionViewHolder extends RecyclerView.ViewHolder {
     private TextView titleText;
     private TextView questionText;
     private TextView StatusText;
     private View mainView;
 
-    public ArticleViewHolder(@NonNull View itemView) {
+    public QuestionViewHolder(@NonNull View itemView) {
         super(itemView);
         mainView = itemView;
         titleText = itemView.findViewById(R.id.title);
