@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,6 +18,9 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.hopportunities.CreateAccount;
 import com.example.hopportunities.MainActivity;
 import com.example.hopportunities.R;
+import com.example.hopportunities.data.model.Question;
+
+import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
 
@@ -35,7 +39,7 @@ public class HomeFragment extends Fragment {
         if (homeViewModel.isStudent) {
             root = inflater.inflate(R.layout.fragment_student_home, container, false);
             LinearLayout subjectsLayout = (LinearLayout) root.findViewById(R.id.subjects2);
-
+            Toast.makeText(getContext(), "Hello", Toast.LENGTH_LONG).show();
             for (String subject : homeViewModel.subjects) {
                 TextView subjTextView = new TextView(mainActivity);
                 subjTextView.setText("   " + subject + "   ");

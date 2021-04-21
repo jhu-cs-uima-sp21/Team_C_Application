@@ -5,9 +5,10 @@
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/navigation_home">
 
+    <!-- TODO : question fragment connect -->
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.hopportunities.ui.home.HomeFragment"
+        android:name="com.example.hopportunities.ui.home.QuestionFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
