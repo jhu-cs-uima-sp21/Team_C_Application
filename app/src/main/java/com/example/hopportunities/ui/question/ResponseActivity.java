@@ -33,7 +33,7 @@ public class ResponseActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_question_responses);
-
+        setTitle(R.string.view_responses);
 
         String question = getIntent().getStringExtra("question");
         String title = getIntent().getStringExtra("title");

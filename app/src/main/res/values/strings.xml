@@ -21,9 +21,12 @@
     <string name="ask_your_question">Ask Your Question</string>
     <string name="title">Title</string>
     <string name="no_responses">No Responses</string>
+    <string name="answer_question">Answer Question</string>
     <string name="view_responses">View Responses</string>
     <string name="tutor">Tutor</string>
-    <string name="empty">Empty?</string>
+    <string name="empty">Empty</string>
+    <string name="submit">Submit</string>
+    <string name="answer">Answer</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

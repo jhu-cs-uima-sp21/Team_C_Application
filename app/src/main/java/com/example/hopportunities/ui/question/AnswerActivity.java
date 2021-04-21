@@ -36,6 +36,7 @@ public class AnswerActivity extends AppCompatActivity implements ValueEventListe
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_answer);
+        setTitle(R.string.answer_question);
 
         String title = getIntent().getStringExtra("title");
         String question = getIntent().getStringExtra("question");
@@ -58,7 +59,7 @@ public class AnswerActivity extends AppCompatActivity implements ValueEventListe
             public void onClick(View v) {
                 Log.i("Answer", "name : " + firstName + " " + lastName);
                 if(answerText.getText().toString().isEmpty()){
-                    Toast.makeText(getApplicationContext(), "nop", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.empty, Toast.LENGTH_SHORT).show();
                 }else {
                     DatabaseReference item = refer.push();
                     QuestionResponse answer = new QuestionResponse(firstName, lastName, answerText.getText().toString());
