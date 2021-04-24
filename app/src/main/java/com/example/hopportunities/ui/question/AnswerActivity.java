@@ -30,6 +30,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+import static java.lang.Integer.parseInt;
+
 public class AnswerActivity extends AppCompatActivity implements ValueEventListener {
     private String firstName, lastName, uid;
     @Override
@@ -64,6 +66,24 @@ public class AnswerActivity extends AppCompatActivity implements ValueEventListe
                     DatabaseReference item = refer.push();
                     QuestionResponse answer = new QuestionResponse(firstName, lastName, answerText.getText().toString());
                     item.setValue(answer);
+
+                    DatabaseReference dbref  = FirebaseDatabase.getInstance("https://hopportunities-bb518-default-rtdb.firebaseio.com/").getReference();
+                    dbref.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            if (dataSnapshot.child("tutors").child(id).getValue() != null) {
+                                int ans;
+                                if (dataSnapshot.child("numAns") == null) {
+                                    ans = 0;
+                                } else {
+                                    ans = parseInt(dataSnapshot.child("numAns").child(id).getValue().toString());
+                                }
+                                dbref.child("numAns").child(id).setValue(ans + 1);
+                            }
+
+                        }
+                        @Override public void onCancelled(DatabaseError error) { }
+                    });
                     finish();
                 }
             }
