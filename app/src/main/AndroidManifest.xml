@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Hopportunities">
-        <activity android:name=".EditAccount"></activity>
+        <activity android:name=".ViewTutor"></activity>
+        <activity android:name=".EditAccount" />
         <activity android:name=".Find_Schedule" />
         <activity android:name=".ui.question.NewQuestionActivity" />
         <activity android:name=".FindTutorsActivity" />

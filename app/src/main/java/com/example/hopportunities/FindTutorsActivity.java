@@ -39,6 +39,7 @@ public class FindTutorsActivity extends AppCompatActivity {
     private List<Tutor> tutors;
     private static final String TAG = "dbref: ";
     protected TutorAdapter aa;
+    private FindTutorsActivity fta;
     ArrayList<String> subs;
     ArrayList<ArrayList<Boolean>> avail;
     ArrayList<Boolean> tempAvail;
@@ -108,6 +109,7 @@ public class FindTutorsActivity extends AppCompatActivity {
         ListView lv = findViewById(R.id.find_tutors_list);
         lv.setAdapter(aa);
         subs = getIntent().getStringArrayListExtra("subs");
+        fta = this;
         //avail = toCorrectAvailFormat( getIntent().getBooleanArrayExtra("avail"));
         avail = (ArrayList<ArrayList<Boolean>>) getIntent().getSerializableExtra("avail");
         dbref.addValueEventListener(new ValueEventListener() {
@@ -152,39 +154,13 @@ public class FindTutorsActivity extends AppCompatActivity {
                 builder.setMessage("Email this tutor to set up meeting?");
 
                 // add the buttons
-                builder.setPositiveButton("Email", new DialogInterface.OnClickListener() {
+
+
+                builder.setPositiveButton("View Profile", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                       // Intent mailIntent = new Intent(Intent.ACTION_SEND);
-                        String body = "Hello " + t.getFirstName() + " " + t.getLastName(); //fill out
-                        //Uri data = Uri.parse("mailto:?subject=" + "Hopportunities"+ "&body=" + body + "&to=" + t.getEmail());
-                        //mailIntent.setData(data);
-                        /*
-                        mailIntent.putExtra(Intent.EXTRA_EMAIL, t.getEmail());
-                        mailIntent.putExtra(Intent.EXTRA_SUBJECT, "Hopportunities");
-                        mailIntent.putExtra(Intent.EXTRA_TEXT, body);
-                        mailIntent.setType("message/rfc822");
-                        //startActivity(Intent.createChooser(mailIntent, "Send mail..."));
-                        try {
-                            startActivity(Intent.createChooser(mailIntent, "Send mail..."));
-                        } catch (android.content.ActivityNotFoundException ex) {
-                            Toast.makeText(thisAct, "There are no email clients installed.",Toast.LENGTH_SHORT).show();
-                        }
-*/
-                        Intent mailIntent = new Intent(Intent.ACTION_VIEW);
-                        Uri data = Uri.parse("mailto:?subject=" + "Hopportunities"+ "&body=" + body + "&to=" + t.getEmail());
-                        Intent i = new Intent(Intent.ACTION_VIEW,data);
-                        FirebaseUser currentFirebaseUser = FirebaseAuth.getInstance().getCurrentUser() ;
-
-                        String stuId = currentFirebaseUser.getUid();
-
-                        dbref.child("contacts").child(stuId + "-" + t.getId()).setValue(stuId + "-" + t.getId());
-
-                        try {
-                        startActivity(i);
-                        } catch (android.content.ActivityNotFoundException ex) {
-                            Toast.makeText(thisAct, "There are no email clients installed.",Toast.LENGTH_SHORT).show();
-                        }
-                        //Toast.makeText(thisAct, "Email sent!",Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(fta, ViewTutor.class);
+                        intent.putExtra("id", t.getId());
+                        startActivity(intent);
 
                     }
                 } );
