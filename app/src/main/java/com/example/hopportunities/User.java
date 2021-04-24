@@ -1,8 +1,9 @@
 package com.example.hopportunities;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class User {
+public class User implements Serializable {
     private String firstName;
     private String lastName;
     private String email;
@@ -40,8 +41,6 @@ public class User {
     public String getEmail() {
         return email;
     }
-
-
 
     public ArrayList<String> getSubjects() {
         return subjects;

@@ -1,6 +1,5 @@
 package com.example.hopportunities;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,7 +12,6 @@ import android.widget.RadioButton;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.hopportunities.ui.login.LoginActivity;
 import com.google.android.material.snackbar.Snackbar;
 
 public class SignUpFrag1 extends Fragment {
@@ -65,7 +63,7 @@ public class SignUpFrag1 extends Fragment {
                     //launch student fragment 2
                     SignUpFrag2Student suf = new SignUpFrag2Student();
                     FragmentTransaction ftr = createAccount.fm.beginTransaction();
-                    ftr.replace(R.id.fragment_container, suf).addToBackStack(null).commit();
+                    ftr.replace(R.id.fragment_container_edit, suf).addToBackStack(null).commit();
                 } else {
                     createAccount.student = false;
                     createAccount.firstName = firstname;
@@ -73,7 +71,7 @@ public class SignUpFrag1 extends Fragment {
                     // launch tutor fragment 2
                     SignUpFrag2Tutor signup_tutor = new SignUpFrag2Tutor();
                     FragmentTransaction ftr = createAccount.fm.beginTransaction();
-                    ftr.replace(R.id.fragment_container, signup_tutor).addToBackStack(null).commit();
+                    ftr.replace(R.id.fragment_container_edit, signup_tutor).addToBackStack(null).commit();
                 }
                 //createAccount.ft.replace(R.id.fragment_container, signUp2).addToBackStack(null).commit();
             }

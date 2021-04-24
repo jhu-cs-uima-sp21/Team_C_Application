@@ -6,14 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Spinner;
 import android.widget.ToggleButton;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ScheduleFrag extends Fragment {
     private CreateAccount createAccount;
@@ -107,7 +105,7 @@ public class ScheduleFrag extends Fragment {
 
                 FragmentTransaction ft = createAccount.fm.beginTransaction();
                 ConfirmFragment confirmFragment = new ConfirmFragment();
-                ft.replace(R.id.fragment_container, confirmFragment).addToBackStack(null).commit();
+                ft.replace(R.id.fragment_container_edit, confirmFragment).addToBackStack(null).commit();
                 return;
             }
         });

@@ -100,7 +100,7 @@ public class SignUpFrag2Tutor extends Fragment implements
                 createAccount.subs = subs;
                 FragmentTransaction ft = createAccount.fm.beginTransaction();
                 ScheduleFrag sched = new ScheduleFrag();
-                ft.replace(R.id.fragment_container, sched).addToBackStack(null).commit();
+                ft.replace(R.id.fragment_container_edit, sched).addToBackStack(null).commit();
                 return;
 
 

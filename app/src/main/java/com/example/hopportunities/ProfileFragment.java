@@ -10,16 +10,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 
-import com.example.hopportunities.MainActivity;
-import com.example.hopportunities.R;
 import com.example.hopportunities.ui.login.LoginActivity;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -27,8 +20,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -38,6 +29,10 @@ public class ProfileFragment extends Fragment {
     private FirebaseDatabase mdbase;
     private DatabaseReference dbref;
     private String id;
+    private Boolean isStudent;
+
+    private Tutor tutor;
+    private Student student;
 
     private TextView name, type, grade, subjects, bio, avail;
 
@@ -69,7 +64,37 @@ public class ProfileFragment extends Fragment {
         }
 
         id = user.getUid();
-        findUser(id);
+
+        findUser(id, new OnGetDataListener() {
+            @Override
+            public void onSuccess(DataSnapshot dataSnapshot) {
+                Button editProfile = mainActivity.findViewById(R.id.editProfile);
+
+                editProfile.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Intent intent = new Intent(v.getContext(), EditAccount.class);
+                        intent.putExtra("userType", isStudent);
+                        if (isStudent) {
+                            intent.putExtra("userStudent", student);
+                        } else {
+                            intent.putExtra("userTutor", tutor);
+                        }
+                        startActivity(intent);
+                    }
+                });
+            }
+
+            @Override
+            public void onStart() {
+                Log.d("onStart", "Started");
+            }
+
+            @Override
+            public void onFailure() {
+                Log.d("onFailure", "Failed");
+            }
+        });
 
         Button logout = mainActivity.findViewById(R.id.logout);
 
@@ -82,7 +107,8 @@ public class ProfileFragment extends Fragment {
         });
     }
 
-    private void findUser(String id) {
+    private void findUser(String id, final OnGetDataListener listener) {
+        listener.onStart();
         dbref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
@@ -90,6 +116,7 @@ public class ProfileFragment extends Fragment {
                 for (DataSnapshot tutor : tutors) {
                     Tutor t = tutor.getValue(Tutor.class);
                     if (t.getId().equals(id)) {
+                        isStudent = false;
                         buildTutorProfile(t);
                     }
                 }
@@ -97,14 +124,17 @@ public class ProfileFragment extends Fragment {
                 for (DataSnapshot student : students) {
                     Student s = student.getValue(Student.class);
                     if (s.getId().equals(id)) {
+                        isStudent = true;
                         buildStudentProfile(s);
                     }
                 }
+                listener.onSuccess(snapshot);
             }
             @Override
             public void onCancelled(DatabaseError error) {
                 // Failed to read value
                 Log.w("Error", "Failed to read value.", error.toException());
+                listener.onFailure();
             }
         });
     }
@@ -137,6 +167,8 @@ public class ProfileFragment extends Fragment {
             subjects.setText(tSubs);
             bio.setText(tBio);
             avail.setText(tAvailFormatted);
+
+            tutor = t;
         }
     }
 
@@ -167,7 +199,15 @@ public class ProfileFragment extends Fragment {
             tv_avail.setVisibility(View.GONE);
             bio.setText(null);
             avail.setText(null);
+
+            student = s;
         }
+    }
+
+    public interface OnGetDataListener {
+        void onSuccess(DataSnapshot dataSnapshot);
+        void onStart();
+        void onFailure();
     }
 
     private String buildScheduleString(StringBuilder userAvail, ArrayList<ArrayList<Boolean>> schedule) {

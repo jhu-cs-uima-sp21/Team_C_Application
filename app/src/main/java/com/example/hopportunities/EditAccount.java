@@ -10,27 +10,38 @@ import android.util.Log;
 
 import java.util.ArrayList;
 
-public class CreateAccount extends FragmentActivity {
-    private Fragment signUp1;
-    public String userId;
-    public String userEmail;
-    public String firstName;
-    public String lastName;
-    private FragmentTransaction ft;
-    public Boolean student; //true = student false = tutor
-    public FragmentManager fm;
-    public String gradeEdu;
-    public ArrayList<String> subs;
-    public String bio;
-    public ArrayList<ArrayList<Boolean>> avail;
+public class EditAccount extends FragmentActivity {
 
+    public String userId, userEmail, firstName, lastName, gradeEdu, bio;
+    public Boolean isStudent; //true = student false = tutor
+    public ArrayList<String> subs;
+    public ArrayList<ArrayList<Boolean>> avail;
+    public Tutor tutorAcc;
+    public Student studentAcc;
+
+    private Fragment signUp1;
+    private FragmentTransaction ft;
+    public FragmentManager fm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
-        userId = getIntent().getStringExtra("id");
-        userEmail = getIntent().getStringExtra("email");
+
+        isStudent = getIntent().getBooleanExtra("userType", false);
+
+        if (isStudent) {
+            studentAcc = (Student) getIntent().getSerializableExtra("userStudent");
+
+            userId = studentAcc.getId();
+            userEmail = studentAcc.getEmail();
+        } else {
+            tutorAcc = (Tutor) getIntent().getSerializableExtra("userTutor");
+
+            userId = tutorAcc.getId();
+            userEmail = tutorAcc.getEmail();
+        }
+
         signUp1 = new SignUpFrag1();
         fm = getSupportFragmentManager();
         ft = getSupportFragmentManager().beginTransaction();
