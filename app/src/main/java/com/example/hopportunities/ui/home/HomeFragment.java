@@ -94,7 +94,7 @@ public class HomeFragment extends Fragment {
             hello_name_real.setText("Hello, " + firstName + "!");
             TextView num_students_contacted = root.findViewById(R.id.num_students_contacted);
 //            num_students_contacted.setText(notificationsViewModel.GetStudentsContacted().getValue().size());
-            TextView num_questions_answered = root.findViewById(R.id.num_questions_answered);
+            //TextView num_questions_answered = root.findViewById(R.id.num_questions_answered);
             lv = root.findViewById(R.id.students);
             LinearLayout subjectsLayout = (LinearLayout) root.findViewById(R.id.subjects);
             if (homeViewModel.subjects == null) {
@@ -221,7 +221,7 @@ public class HomeFragment extends Fragment {
         System.out.println("is Student?" + homeViewModel.isStudent);
         if (!homeViewModel.isStudent) {
             aa.notifyDataSetChanged();
-            TextView answered = root.findViewById(R.id.num_questions_answered);
+           // TextView answered = root.findViewById(R.id.num_questions_answered);
             TextView contact = root.findViewById(R.id.num_students_contacted);
 
             System.out.println("So print here?" + users.isEmpty());
@@ -237,7 +237,7 @@ public class HomeFragment extends Fragment {
                         } else {
                             ans = parseInt(dataSnapshot.child("numAns").child(homeViewModel.getID()).getValue().toString());
                         }
-                        answered.setText(String.valueOf(ans));
+                        //answered.setText(String.valueOf(ans));
 
 
                 }
