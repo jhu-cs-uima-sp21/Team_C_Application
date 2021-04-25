@@ -96,30 +96,6 @@
         app:layout_constraintTop_toBottomOf="@+id/num_students_contacted"
         app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/num_questions_answered"
-        android:layout_width="34dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="264dp"
-        android:editable="true"
-        android:text="0"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/num_students_contacted"
-        app:layout_constraintTop_toBottomOf="@id/your_history" />
-
-    <TextView
-        android:id="@+id/questions_answered"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="244dp"
-        android:layout_marginTop="20dp"
-        android:text="Questions Answered"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/num_questions_answered"
-        app:layout_constraintVertical_bias="0.07" />
-
     <ListView
         android:id="@+id/students"
         android:layout_width="0dp"
