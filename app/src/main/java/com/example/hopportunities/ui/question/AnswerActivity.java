@@ -71,14 +71,16 @@ public class AnswerActivity extends AppCompatActivity implements ValueEventListe
                     dbref.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
-                            if (dataSnapshot.child("tutors").child(id).getValue() != null) {
+                            System.out.println("Num ans outer");
+                            if (dataSnapshot.child("tutors").child(uid).child("firstName").getValue() != null) {
+                                System.out.println("Num ans inner");
                                 int ans;
-                                if (dataSnapshot.child("numAns") == null) {
+                                if (dataSnapshot.child("numAns").child(uid) == null) {
                                     ans = 0;
                                 } else {
-                                    ans = parseInt(dataSnapshot.child("numAns").child(id).getValue().toString());
+                                    ans = parseInt(dataSnapshot.child("numAns").child(uid).getValue().toString());
                                 }
-                                dbref.child("numAns").child(id).setValue(ans + 1);
+                                dbref.child("numAns").child(uid).setValue(ans + 1);
                             }
 
                         }
