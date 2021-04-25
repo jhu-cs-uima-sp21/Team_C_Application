@@ -1,10 +1,29 @@
 # Team_C_Application
 
-Example Logins for Hopportunities:
+__________________________________
 
-Email: student@gmail.com
-Password: teststudent
+Contributions:
+__________________________________
+
+Will: I did the find tutors functionality, some of the sign up process, and the list views on the home screens (contacted).
+
+Danny: Made login/sign up process, connecting the Firebase user authentication with the real time database. Created confirmation page, profile tab, and a way for users to edit their profiles. Updated README.md.
+
+Daniel: I did the home pages for both students and tutors. I created the Xmls, view model, and fragment for the home screens and did access to the firebase to access things like your subjects.
+
+Eugene: I created the answer questions tab. Users can ask and answer questions, much like a forum, using the Firebase real time database. 
+__________________________________
+
+Example Logins for Hopportunities:
+__________________________________
+
+Email: bluejay@gmail.com
+Password: 123456
 User Type: Student
+
+Email: johnshopkins@gmail.com
+Password: 123456
+__________________________________
 
 Email: will@gmail.com
 Password: willlacey
@@ -21,8 +40,21 @@ User Type: Tutor
 Email: daniel@gmail.com
 Password: danielyim
 User Type: Tutor
+__________________________________
 
 We will record our meeting minutes here:
+__________________________________
+
+In addition to recurring weekly meetings with Max @ Friday 11 a.m.:
+
+Date: 4/25/2021
+Attendees: Will, Daniel, Danny, Eugene
+Duration: 50 minutes
+Discussion Points: Made final touches to the app. Fixed a bug in AnswerActivity.java. Locked the screen orientation throughout the app. Divided up the talking points for the presentation on Monday.
+
+Date: 4/20/2021
+Attendees: Will, Daniel, Danny, Eugene
+Discussion Points: Went over the implementation for ask and answer tab and how to structure data on Firebase. 
 
 Date: 4/18/2021
 Attendees: Will, Daniel, Danny
@@ -58,3 +90,4 @@ Date: 3/24/2021
 Attendees: Will, Daniel
 Duration: 1 hour
 Discussion Points: Basic git set up (issue with defaulting to master instead of main)
+__________________________________
