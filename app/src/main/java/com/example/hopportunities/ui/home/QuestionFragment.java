@@ -43,6 +43,7 @@ public class QuestionFragment extends Fragment {
     private MainActivity mainActivity;
     private CreateAccount createAccount;
     private FloatingActionButton newQuestion;
+    public int questionsAnswered;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         mainActivity = (MainActivity) getActivity();
@@ -77,6 +78,8 @@ public class QuestionFragment extends Fragment {
                     list.add(new Pair<String, Question>(postSnapshot.getKey(), qes));
                 }
                 adapter.setItem(list);
+                questionsAnswered++;
+                System.out.println("HIIII" + questionsAnswered);
             }
 
             @Override

@@ -58,6 +58,7 @@ public class HomeFragment extends Fragment {
     private ArrayList users;
     private int numContacts;
 
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         mainActivity = (MainActivity) getActivity();
@@ -94,6 +95,7 @@ public class HomeFragment extends Fragment {
             hello_name_real.setText("Hello, " + firstName + "!");
             TextView num_students_contacted = root.findViewById(R.id.num_students_contacted);
 //            num_students_contacted.setText(notificationsViewModel.GetStudentsContacted().getValue().size());
+
             //TextView num_questions_answered = root.findViewById(R.id.num_questions_answered);
             lv = root.findViewById(R.id.students);
             LinearLayout subjectsLayout = (LinearLayout) root.findViewById(R.id.subjects);
@@ -104,10 +106,6 @@ public class HomeFragment extends Fragment {
             for (String subject : homeViewModel.subjects) {
                 TextView subjTextView = new TextView(mainActivity);
                 subjTextView.setText("      " + subject + "     ");
-//              android:layout_width="88dp"
-//              android:layout_height="43dp"
-//              android:layout_marginStart="20dp"
-//              android:layout_marginBottom="8dp"
 
                 subjectsLayout.addView(subjTextView);
             }
