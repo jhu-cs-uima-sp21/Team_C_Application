@@ -67,6 +67,8 @@ public class AnswerActivity extends AppCompatActivity implements ValueEventListe
                     QuestionResponse answer = new QuestionResponse(firstName, lastName, answerText.getText().toString());
                     item.setValue(answer);
 
+
+ /*
                     DatabaseReference dbref  = FirebaseDatabase.getInstance("https://hopportunities-bb518-default-rtdb.firebaseio.com/").getReference();
                     dbref.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
@@ -86,10 +88,13 @@ public class AnswerActivity extends AppCompatActivity implements ValueEventListe
                         }
                         @Override public void onCancelled(DatabaseError error) { }
                     });
+                    */
                     finish();
                 }
             }
         });
+
+
     }
 
     @Override
