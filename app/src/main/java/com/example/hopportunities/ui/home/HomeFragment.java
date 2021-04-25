@@ -223,15 +223,14 @@ public class HomeFragment extends Fragment {
             aa.notifyDataSetChanged();
             TextView answered = root.findViewById(R.id.num_questions_answered);
             TextView contact = root.findViewById(R.id.num_students_contacted);
-            //contact.setText("hello");
-            contact.setText( String.valueOf(aa.getCount()));
-            //contact.setText(String.valueOf(1));
+
             System.out.println("So print here?" + users.isEmpty());
             DatabaseReference dbref2  = FirebaseDatabase.getInstance("https://hopportunities-bb518-default-rtdb.firebaseio.com/").getReference();
             dbref2.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
-
+                        System.out.println("In data change?" + users.size());
+                        contact.setText( String.valueOf(aa.getCount()));
                         int ans;
                         if (dataSnapshot.child("numAns").child(homeViewModel.getID()).getValue() == null) {
                             ans = 0;
