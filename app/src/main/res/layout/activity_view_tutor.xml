@@ -66,7 +66,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="My Profile"
+        android:text="View Profile"
         android:textColor="#3F51B5"
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -131,25 +131,13 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_avail" />
 
     <Button
-        android:id="@+id/editProfile"
+        android:id="@+id/emailTutor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="152dp"
-        android:text="Edit Profile"
+        android:layout_marginTop="8dp"
+        android:text="Email"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/logout"
-        app:layout_constraintTop_toBottomOf="@+id/tv_avail" />
-
-    <Button
-        android:id="@+id/logout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="152dp"
-        android:text="Logout"
-        app:layout_constraintEnd_toStartOf="@+id/editProfile"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_avail" />
+        app:layout_constraintTop_toBottomOf="@+id/userAvail" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

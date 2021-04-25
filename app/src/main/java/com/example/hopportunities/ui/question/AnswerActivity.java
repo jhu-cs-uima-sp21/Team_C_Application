@@ -30,6 +30,8 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
+import static java.lang.Integer.parseInt;
+
 public class AnswerActivity extends AppCompatActivity implements ValueEventListener {
     private String firstName, lastName, uid;
     @Override
@@ -43,8 +45,8 @@ public class AnswerActivity extends AppCompatActivity implements ValueEventListe
         String id = getIntent().getStringExtra("id");
         uid = getIntent().getStringExtra("uid");
         Log.i("ViewModel", uid);
-        FirebaseDatabase.getInstance().getReference().child("students").addValueEventListener(this);
-        FirebaseDatabase.getInstance().getReference().child("tutors").addValueEventListener(this);
+        FirebaseDatabase.getInstance("https://hopportunities-bb518-default-rtdb.firebaseio.com/").getReference().child("students").addValueEventListener(this);
+        FirebaseDatabase.getInstance("https://hopportunities-bb518-default-rtdb.firebaseio.com/").getReference().child("tutors").addValueEventListener(this);
         DatabaseReference refer = FirebaseDatabase.getInstance("https://hopportunities-bb518-default-rtdb.firebaseio.com/")
                 .getReference().child("question").child(id).child("responses");
         Button answer = findViewById(R.id.answer_submit);
@@ -64,10 +66,35 @@ public class AnswerActivity extends AppCompatActivity implements ValueEventListe
                     DatabaseReference item = refer.push();
                     QuestionResponse answer = new QuestionResponse(firstName, lastName, answerText.getText().toString());
                     item.setValue(answer);
+
+
+ /*
+                    DatabaseReference dbref  = FirebaseDatabase.getInstance("https://hopportunities-bb518-default-rtdb.firebaseio.com/").getReference();
+                    dbref.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            System.out.println("Num ans outer");
+                            if (dataSnapshot.child("tutors").child(uid).child("firstName").getValue() != null) {
+                                System.out.println("Num ans inner");
+                                int ans;
+                                if (dataSnapshot.child("numAns").child(uid) == null) {
+                                    ans = 0;
+                                } else {
+                                    ans = parseInt(dataSnapshot.child("numAns").child(uid).getValue().toString());
+                                }
+                                dbref.child("numAns").child(uid).setValue(ans + 1);
+                            }
+
+                        }
+                        @Override public void onCancelled(DatabaseError error) { }
+                    });
+                    */
                     finish();
                 }
             }
         });
+
+
     }
 
     @Override
