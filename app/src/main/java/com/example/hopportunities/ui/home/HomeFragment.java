@@ -27,11 +27,15 @@ public class HomeFragment extends Fragment {
     private HomeViewModel homeViewModel;
     private MainActivity mainActivity;
     private CreateAccount createAccount;
+ //   public QuestionFragment questionFragment;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         mainActivity = (MainActivity) getActivity();
         homeViewModel =
                 new ViewModelProvider(mainActivity).get(HomeViewModel.class);
+//        questions
+//        questionsFragment =
+//                new Fragment(questionFragment).get(QuestionFragment.class)
         String firstName = homeViewModel.firstName;
 
         View root;
@@ -57,6 +61,8 @@ public class HomeFragment extends Fragment {
             TextView num_students_contacted = root.findViewById(R.id.num_students_contacted);
 //            num_students_contacted.setText(notificationsViewModel.GetStudentsContacted().getValue().size());
             TextView num_questions_answered = root.findViewById(R.id.num_questions_answered);
+
+          //  num_questions_answered.setText(QuestionFragment.class.que);
             LinearLayout subjectsLayout = (LinearLayout) root.findViewById(R.id.subjects);
             if (homeViewModel.subjects == null) {
                 System.out.println("Error");
